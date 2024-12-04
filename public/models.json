@@ -1,0 +1,94 @@
+{
+    "data": [
+        {
+            "capabilities": {
+                "family": "gpt-4o",
+                "limits": {
+                    "max_context_window_tokens": 128000,
+                    "max_output_tokens": 4096,
+                    "max_prompt_tokens": 64000
+                },
+                "object": "model_capabilities",
+                "supports": {
+                    "parallel_tool_calls": true,
+                    "tool_calls": true
+                },
+                "tokenizer": "o200k_base",
+                "type": "chat"
+            },
+            "id": "gpt-4o",
+            "model_picker_enabled": true,
+            "name": "GPT 4o",
+            "object": "model",
+            "preview": false,
+            "vendor": "Azure OpenAI",
+            "version": "gpt-4o-2024-05-13"
+        },
+        {
+            "capabilities": {
+                "family": "o1",
+                "limits": {
+                    "max_context_window_tokens": 128000,
+                    "max_prompt_tokens": 20000
+                },
+                "object": "model_capabilities",
+                "supports": {},
+                "tokenizer": "o200k_base",
+                "type": "chat"
+            },
+            "id": "o1-preview",
+            "model_picker_enabled": true,
+            "name": "o1-preview (Preview)",
+            "object": "model",
+            "preview": true,
+            "vendor": "Azure OpenAI",
+            "version": "o1-preview-2024-09-12"
+        },
+        {
+            "capabilities": {
+                "family": "o1-mini",
+                "limits": {
+                    "max_context_window_tokens": 128000,
+                    "max_prompt_tokens": 20000
+                },
+                "object": "model_capabilities",
+                "supports": {},
+                "tokenizer": "o200k_base",
+                "type": "chat"
+            },
+            "id": "o1-mini",
+            "model_picker_enabled": true,
+            "name": "o1-mini (Preview)",
+            "object": "model",
+            "preview": true,
+            "vendor": "Azure OpenAI",
+            "version": "o1-mini-2024-09-12"
+        },
+        {
+            "capabilities": {
+                "family": "claude-3.5-sonnet",
+                "limits": {
+                    "max_context_window_tokens": 200000,
+                    "max_output_tokens": 4096,
+                    "max_prompt_tokens": 195000
+                },
+                "object": "model_capabilities",
+                "supports": {},
+                "tokenizer": "o200k_base",
+                "type": "chat"
+            },
+            "id": "claude-3.5-sonnet",
+            "model_picker_enabled": true,
+            "name": "Claude 3.5 Sonnet (Preview)",
+            "object": "model",
+            "policy": {
+                "state": "enabled",
+                "terms": "Enable access to the latest Claude 3.5 Sonnet model from Anthropic. [Learn more about how GitHub Copilot serves Claude 3.5 Sonnet](https://docs.github.com/copilot/using-github-copilot/using-claude-sonnet-in-github-copilot)."
+            },
+            "preview": true,
+            "vendor": "Anthropic",
+            "version": "claude-3.5-sonnet"
+        }
+    ],
+    "object": "list"
+}
