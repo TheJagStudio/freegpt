@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkRehype from "remark-rehype";
-import remarkMath from "remark-math";
-import rehypeMathjax from "rehype-mathjax";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus, vs } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { formatLatexEquation } from '../utils/mathUtils';
+
 import { Share, Sparkles, Volume2, Copy, RotateCcw, HelpCircle, Sun, Moon, Check } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import "katex/dist/katex.min.css";
+
+import { MarkdownRenderer } from "../components/MarkdownRenderer";
 
 function Chat() {
     const [messages, setMessages] = useState([{ role: "assistant", content: "Hello! How can I assist you today?" }]);
@@ -282,6 +278,7 @@ function Chat() {
                 </header>
 
                 <ScrollArea id="chat-container" className="flex-1 p-4">
+
                     <div className="max-w-3xl mx-auto space-y-6">
                         {messages.map((message, index) => (
                             <div key={index} className={`flex gap-4 ${message.role === "user" ? "justify-end" : "justify-start"}`}>
@@ -297,7 +294,7 @@ function Chat() {
                                         <svg className={`absolute -left-8 top-0 w-6 h-6 cursor-pointer text-gray-400 hover:text-gray-500 dark:text-zinc-400 dark:hover:text-gray-300 bg-[#f3f3f3] dark:bg-[#303030] p-1 rounded-full hidden ${message.role === "user" ? "group-hover:block" : ""}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M13.293 4.293a4.536 4.536 0 1 1 6.414 6.414l-1 1-7.094 7.094A5 5 0 0 1 8.9 20.197l-4.736.79a1 1 0 0 1-1.15-1.151l.789-4.736a5 5 0 0 1 1.396-2.713zM13 7.414l-6.386 6.387a3 3 0 0 0-.838 1.628l-.56 3.355 3.355-.56a3 3 0 0 0 1.628-.837L16.586 11zm5 2.172L14.414 6l.293-.293a2.536 2.536 0 0 1 3.586 3.586z" fill="currentColor" />
                                         </svg>
-                                        <ReactMarkdown
+                                        {/* <ReactMarkdown
                                             components={{
                                                 code({ node, inline, className, children, ...props }) {
                                                     const match = /language-(\w+)/.exec(className || "");
@@ -310,11 +307,12 @@ function Chat() {
                                                     );
                                                 },
                                             }}
-                                            remarkPlugins={[remarkRehype, remarkMath, remarkGfm]}
-                                            rehypePlugins={[rehypeMathjax]}
+                                            remarkPlugins={[remarkMath, remarkGfm]}
+                                            rehypePlugins={[rehypeKatex]}
                                         >
                                             {message.content}
-                                        </ReactMarkdown>
+                                        </ReactMarkdown> */}
+                                        <MarkdownRenderer content={message.content} isDarkTheme={isDarkTheme} />
                                     </div>
                                     {message.role === "assistant" && (
                                         <div className="flex items-center gap-2 mt-2 justify-start">

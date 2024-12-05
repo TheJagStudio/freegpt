@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
+
   :root {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
@@ -57,6 +60,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
 }
 
 * {
@@ -66,39 +70,51 @@
 body {
   @apply bg-background text-foreground;
 }
+
 code {
   @apply !text-black dark:!text-white;
 }
-pre div{
+
+pre div {
   @apply !bg-[#f9f9f9] dark:!bg-[#303030] rounded-lg !w-[100%] !max-w-full !text-wrap !whitespace-pre-wrap;
 }
-#chat-container h3{
+
+#chat-container h3 {
   @apply text-2xl font-bold mb-2;
 }
-#chat-container h4{
-  @apply text-xl font-semibold mb-2 ;
+
+#chat-container h4 {
+  @apply text-xl font-semibold mb-2;
 }
-#chat-container p{
+
+#chat-container p {
   @apply text-gray-800 dark:text-gray-200 mb-1 text-justify;
 }
-#chat-container a{
+
+#chat-container a {
   @apply border-b italic;
 }
-#chat-container ol{
+
+#chat-container ol {
   @apply pl-10 list-decimal;
 }
-table{
+
+table {
   @apply w-fit border-collapse text-center !my-2;
 }
-thead{
+
+thead {
   @apply bg-[#e5e5e5] dark:bg-[#383838];
 }
-tr{
+
+tr {
   @apply border border-[#c3c3c3] dark:border-[#555555];
 }
-td{
+
+td {
   @apply border border-[#c3c3c3] dark:border-[#555555] px-6;
 }
-th{
+
+th {
   @apply border border-[#c3c3c3] dark:border-[#555555] px-6;
 }
